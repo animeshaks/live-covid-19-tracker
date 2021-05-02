@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+     <title>Covid-19-Tracker</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="team" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/style.css">
+
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+     <script src="js/main.js"></script>
+</head>
+<body ng-controller="myCtrl">
+     <section class="preloader">
+          <div class="spinner">
+               <span class="spinner-rotate"></span>       
+          </div>
+     </section>
+     <section id="home">
+        <div class="overlay"></div>
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                         <div class="home-info">
+                              <h1 class="text-center">{{title}}</h1>
+                              <ul class="countdown">
+                                   <li style="color: yellow;">
+                                        <span>{{all_data.confirmed.value}}</span>
+                                        <h3>Confirmed</h3>
+                                   </li>
+                                   <li style="color: green;">
+                                        <span>{{all_data.recovered.value}}</span>
+                                        <h3>Recovered</h3>
+                                   </li>
+                                   <li style="color: red;">
+                                        <span>{{all_data.deaths.value}}</span>
+                                        <h3>Deaths</h3>
+                                   </li>    
+                              </ul>
+                              <div class="subscribe-form">
+                                <form action="" method="get">
+                                  <input type="text" class="form-control" placeholder="Enter Country Name" ng-model="input_country" ng-change="get_country_data()">
+                                </form>
+                              </div>
+                              <br>
+                              <div  ng-if="input_country_data">
+                                   <h1 class="text-center">{{input_country}} Covid-19 Live Updates</h1>
+                                   <ul class="countdown">
+                                        <li style="color: yellow;">
+                                             <span>{{input_country_data.confirmed.value}}</span>
+                                             <h3>Confirmed</h3>
+                                        </li>
+                                        <li style="color: green;">
+                                             <span>{{input_country_data.recovered.value}}</span>
+                                             <h3>Recovered</h3>
+                                        </li>
+                                        <li style="color: red;">
+                                             <span>{{input_country_data.deaths.value}}</span>
+                                             <h3>Deaths</h3>
+                                        </li>    
+                                   </ul>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12">
+                         <h4 class="text-center">Developed By <a href="https://anisrijan.netlify.app/" target="_blank">Animesh Shukla</a></h4>
+                      <ul class="social-icon">
+                         <li><a href="https://www.linkedin.com/in/animesh-shukla-64438a195" class="fa fa-linkedin-square" target="_blank"></a></li>
+                         <li><a href="https://www.facebook.com/animesh.shukla.925" class="fa fa-facebook" target="_blank"></a></li>
+                         <li><a href="https://twitter.com/Animesh97149522" class="fa fa-twitter" target="_blank"></a></li>
+                         <li><a href="https://instagram.com/animesh_62600?igshid=da31wrdxls1o" class="fa fa-instagram" target="_blank"></a></li>
+                         <li><a href="https://github.com/animeshaks" class="fa fa-code-fork" target="_blank"></a></li>
+                      </ul>
+                    </div>
+               </div>
+          </div>
+     </section>
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/custom.js"></script>
+</body>
+</html>
